@@ -1,6 +1,6 @@
 Instructions to run the code:
 
-Download the code from github link and go to location of the folder where this README.md file is present in CMD.
+Download the code from github link https://github.com/sindhumadhadi09/CustomerMgmt and go to location of the folder where this README.md file is present in CMD.
 Follow the below steps in CMD prompt to run the customers management web app in Django. This uses SQLite DB.
 
 :: Configure the Python virtual environment
