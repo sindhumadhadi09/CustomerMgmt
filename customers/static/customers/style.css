@@ -1,0 +1,26 @@
+li a {
+    color: green;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+#add_customer_link {
+	margin-left: auto; 
+	margin-right: 0;
+	float: right;
+}
+
+.divcontent {
+    border: 1px solid #000;
+    padding-top:20px;
+	padding-left:40px;
+	padding-right:20px;
+    width:80%;
+    margin: auto;
+}
+
+#customers_table {
+	width:90%;
+}
