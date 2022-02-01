@@ -1,0 +1,60 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="../../static/customers/style.css">
+
+<body>
+
+<h1>Customers app</h1>
+<div class="divcontent">
+<a href="{% url 'customers:customer' %}" id = "add_customer_link">Add Customer</a>
+<br>
+<br>
+{% if customers_list %}
+    <ul>
+    <table id ="customers_table">
+	<tr>
+		<th>
+		First Name
+		</th>
+		<th>
+		Last Name
+		</th>
+		<th>
+		Address
+		</th>
+		<th>
+		City
+		</th>
+		<th>
+		Zip Code
+		</th>
+		<th>
+		State
+		</th>
+		<th>
+		Action
+		</th>
+	</tr>
+    {% for customer in customers_list %}
+        <tr>
+        <td>{{customer.customer_firstname}}</td>
+        <td>{{customer.customer_lastname}}</td>
+        <td>{{customer.customer_address}}</td>
+        <td>{{customer.customer_city}}</td>
+        <td>{{customer.customer_zipcode}}</td>
+        <td>{{customer.customer_state}}</td>
+		<td>
+        <form action="{% url 'customers:delete_customer' customer.id %}" method="post">
+			{% csrf_token %} 
+            <input type="submit" value="Delete">
+        </form>
+		</td>
+        </tr>
+    {% endfor %}
+    </table>
+    </ul>
+{% else %}
+    <p>No customers are available.</p>
+{% endif %}
+</div>
+</body>
